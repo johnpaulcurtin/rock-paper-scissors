@@ -3,22 +3,49 @@ console.log ("Hello,World!")
 const weapon = ['rock', 'paper', 'scissors'];
 const playerSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
+let humanScore = 0;
+let computerScore = 0;
+
+
+/*function game() {
+    for (let i = 0; i <=5; i++){
+        playRound();
+    }
+}*/
+
 
 function playRound(){
+
     const winner = checkWinner(playerSelection, computerSelection);
     if(winner == 'Tie') {
-        return 'It\'s a tie.';
+        return `It's a tie. The score is you: ${humanScore} vs. computer: ${computerScore}.`;
     }
     else if(winner == 'Player'){
-        return `You win. ${playerSelection} beats ${computerSelection}`;
+        humanScore++;
+        return `You win. ${playerSelection} beats ${computerSelection}. The score is you: ${humanScore} vs. computer: ${computerScore}.`;
+        
     }
     else{
-        return `You lose. ${computerSelection} beats ${playerSelection}`;
+        computerScore++;
+        return `You lose. ${computerSelection} beats ${playerSelection}. The score is you: ${humanScore} vs. computer: ${computerScore}.`;
     }
 
 }
 console.log(playRound())
 
+function checkWinner() {
+    if (playerSelection == computerSelection) {
+        return 'Tie';
+    } else if (
+        (playerSelection == 'rock' && computerSelection == 'scissors') ||
+        (playerSelection == 'paper' && computerSelection == 'rock') ||
+        (playerSelection == 'scissors' && computerSelection == 'paper')
+    ) {
+        return 'Player';
+    } else{
+        return 'Computer';
+    }
+}
 
 
 
@@ -34,25 +61,8 @@ function getHumanChoice(){
 }
 
 
-function checkWinner() {
-    if (playerSelection == computerSelection) {
-        return 'Tie';
-    } else if (
-        (playerSelection == 'rock' && computerSelection == 'scissors') ||
-        (playerSelection == 'paper' && computerSelection == 'rock') ||
-        (playerSelection == 'scissors' && computerSelection == 'paper')
-    ) {
-        return 'Player';
-    } else{
-        return 'Computer';
-    }
-}
-console.log (checkWinner())
-
-let humanScore = 0;
-let computerScore = 0;
 
 
+game();
 
-console.log (computerSelection)
-console.log (playerSelection)
+
