@@ -7,43 +7,23 @@ let humanScore = 0;
 let computerScore = 0;
 
 
-/*function game() {
-    for (let i = 0; i <=5; i++){
-        playRound();
-    }
-}*/
-
-
 function playRound(){
 
-    const winner = checkWinner(playerSelection, computerSelection);
-    if(winner == 'Tie') {
-        return `It's a tie. The score is you: ${humanScore} vs. computer: ${computerScore}.`;
+    if(playerSelection == computerSelection) {
+        console.log (`It's a tie. The score is you: ${humanScore} vs. computer: ${computerScore}.`);
     }
-    else if(winner == 'Player'){
+    else if(
+        (playerSelection == 'rock' && computerSelection == 'scissors') ||
+        (playerSelection == 'paper' && computerSelection == 'rock') ||
+        (playerSelection == 'scissors' && computerSelection == 'paper')
+    ){
         humanScore++;
-        return `You win. ${playerSelection} beats ${computerSelection}. The score is you: ${humanScore} vs. computer: ${computerScore}.`;
+        console.log(`You win. ${playerSelection} beats ${computerSelection}. The score is you: ${humanScore} vs. computer: ${computerScore}.`);
         
     }
     else{
         computerScore++;
-        return `You lose. ${computerSelection} beats ${playerSelection}. The score is you: ${humanScore} vs. computer: ${computerScore}.`;
-    }
-
-}
-console.log(playRound())
-
-function checkWinner() {
-    if (playerSelection == computerSelection) {
-        return 'Tie';
-    } else if (
-        (playerSelection == 'rock' && computerSelection == 'scissors') ||
-        (playerSelection == 'paper' && computerSelection == 'rock') ||
-        (playerSelection == 'scissors' && computerSelection == 'paper')
-    ) {
-        return 'Player';
-    } else{
-        return 'Computer';
+        console.log (`You lose. ${computerSelection} beats ${playerSelection}. The score is you: ${humanScore} vs. computer: ${computerScore}.`);
     }
 }
 
@@ -60,9 +40,10 @@ function getHumanChoice(){
         return input;
 }
 
-
-
-
-game();
-
-
+  for (let round = 1; round <= 5; round++) {
+    console.log(`Round ${round}:`);
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+  }
+  
