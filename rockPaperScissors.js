@@ -1,13 +1,20 @@
 console.log ("Hello,World!")
 
 const weapon = ['rock', 'paper', 'scissors'];
-const playerSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+let playerSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
 let humanScore = 0;
 let computerScore = 0;
 
 
-function playRound(){
+  for (let round = 1; round <= 5; round++) {
+
+   
+    playRound(playerSelection, computerSelection);
+
+    function playRound(){
+    const playerSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
 
     if(playerSelection == computerSelection) {
         console.log (`It's a tie. The score is you: ${humanScore} vs. computer: ${computerScore}.`);
@@ -26,6 +33,12 @@ function playRound(){
         console.log (`You lose. ${computerSelection} beats ${playerSelection}. The score is you: ${humanScore} vs. computer: ${computerScore}.`);
     }
 }
+     
+
+  
+}
+
+
 
 
 
@@ -40,10 +53,4 @@ function getHumanChoice(){
         return input;
 }
 
-  for (let round = 1; round <= 5; round++) {
-    console.log(`Round ${round}:`);
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
-  }
-  
+  //going 5 scored rounds with ghost getHumanChoice at beginning. 
