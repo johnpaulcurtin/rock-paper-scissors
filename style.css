@@ -37,13 +37,13 @@ body{
   box-shadow: inset 0px 0px 30px white;
   height: 50px;
   width: 50px;
-  border: dashed 1px rgba(238, 98, 180, 0.738);
+  border: solid 1px rgba(1, 247, 231, 0.449);
   border-radius: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: larger;
-  color: rgba(147, 60, 119, 0.464);
+  color: rgba(255, 7, 73, 0.238);
 }
 
 #layerOne{
@@ -81,7 +81,7 @@ body{
   box-shadow: inset 0px 0px 20px rgb(0, 0, 0);
   margin-bottom: 0px;
   color: rgba(0, 0, 0, 0.666);
-background-image:  linear-gradient(#444df722 1px, transparent 1px), linear-gradient(to right, #444df700 1px, #e5e5f7 1px);
+background-image:  linear-gradient(#444df722 1px, transparent 1px), linear-gradient(to right, #444df700 1px, #e5e5f765 1px);
 background-size: 20px 20px;
 }
 
@@ -97,7 +97,7 @@ background-size: 20px 20px;
   align-items: center;
   align-self: center;
   color: rgba(0, 0, 0, 0.666);
-  background-image:  linear-gradient(#444df722 1px, transparent 1px), linear-gradient(to right, #444df700 1px, #e5e5f7 1px);
+  background-image:  linear-gradient(#444df722 1px, transparent 1px), linear-gradient(to right, #444df700 1px, #e5e5f765 1px);
   background-size: 20px 20px;
   
 }
