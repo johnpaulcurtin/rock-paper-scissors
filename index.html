@@ -2,17 +2,40 @@
 <html lang="En">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<script src="rockPaperScissors.js" defer></script>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
 <title>Rock Paper Scissors</title>
 <head>
 
 </head>    
 
 <body>
+  
+  <div id="container">
+    <p id="nametag">JPC</p>
+    <div id="layerOne">
+      <div id= "scores">
+        <div id = 'humanScore'>home: 0</div>
+        <div id = "computerScore">away: 0</div>
+      </div>
+     
 
-<script src="rockPaperScissors.js">
+      <p id="footerDisplay">Hello</p>
+       <div id="center">Rock Paper Scissors</div>
+    </div>
+    <div id="containerFoot">
+      <button id="rock" class="choice" onclick="playRound('rock', getComputerChoice())">ROCK</button>
+      <button id="paper" class="choice" onclick="playRound('paper', getComputerChoice())">PAPER</button>
+      <button id="scissors" class="choice" onclick="playRound('scissors', getComputerChoice())">SCISSORS</button>
+    </div>
 
-</script>
+
+  </div>
+
+
 
 </body>
 

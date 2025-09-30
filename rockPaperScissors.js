@@ -1,23 +1,18 @@
-console.log ("Hello,World!")
-
 const weapon = ['rock', 'paper', 'scissors'];
-let playerSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
 let humanScore = 0;
 let computerScore = 0;
 
 
-  for (let round = 1; round <= 5; round++) {
+
 
    
-    playRound(playerSelection, computerSelection);
+    
 
-    function playRound(){
-    const playerSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
+    function playRound(playerSelection, computerSelection){
+    
 
     if(playerSelection == computerSelection) {
-        console.log (`It's a tie. The score is you: ${humanScore} vs. computer: ${computerScore}.`);
+        document.querySelector('#footerDisplay').innerText = `It's a tie.`;
     }
     else if(
         (playerSelection == 'rock' && computerSelection == 'scissors') ||
@@ -25,18 +20,20 @@ let computerScore = 0;
         (playerSelection == 'scissors' && computerSelection == 'paper')
     ){
         humanScore++;
-        console.log(`You win. ${playerSelection} beats ${computerSelection}. The score is you: ${humanScore} vs. computer: ${computerScore}.`);
-        
+        document.querySelector('#footerDisplay').innerText = `You win. ${playerSelection} beats ${computerSelection}.`;
     }
     else{
         computerScore++;
-        console.log (`You lose. ${computerSelection} beats ${playerSelection}. The score is you: ${humanScore} vs. computer: ${computerScore}.`);
+        document.querySelector('#footerDisplay').innerText = `You lose. ${computerSelection} beats ${playerSelection}.`;
     }
+    document.querySelector('#humanScore').innerText = `home: ${humanScore}`;
+    document.querySelector('#computerScore').innerText = `away: ${computerScore}`;
+    playerSelection = "";
+    computerSelection = getComputerChoice()
 }
      
 
   
-}
 
 
 
@@ -47,10 +44,3 @@ function getComputerChoice(){
 }
 
 
-function getHumanChoice(){
-    let input = prompt("Choose your weapon: rock, paper, or scissors");
-        input = input.toLowerCase();  
-        return input;
-}
-
-  //going 5 scored rounds with ghost getHumanChoice at beginning. 
